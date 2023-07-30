@@ -20,6 +20,10 @@
     },
     "peacock.color": "#1857a4",
     "files.associations": {
-        "string": "cpp"
+        "string": "cpp",
+        "iosfwd": "cpp",
+        "xstring": "cpp",
+        "iostream": "cpp",
+        "xiosbase": "cpp"
     }
 }

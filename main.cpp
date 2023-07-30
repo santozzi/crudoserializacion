@@ -5,44 +5,46 @@
 #include "crud_csv.h"
 using namespace std;
 
+
+
 int main(){
   string ruta = "datos.csv";
   char delimitador = ';';
-  const int cant_cols = 5;
-  cout << "HolaMundo!!";
-  string encabezado[cant_cols];
-  encabezado[0] = "id";
-  encabezado[1] = "nombre";
-  encabezado[2] = "apellido";
-  encabezado[3] = "edad";
-  encabezado[4] = "mail";
-  
-crear_archivo(ruta,delimitador,encabezado,cant_cols);
-find_all(ruta,delimitador,cant_cols);
-
-  encabezado[0] = "1";
-  encabezado[1] = "Sergio";
-  encabezado[2] = "anto";
-  encabezado[3] = "39";
-  encabezado[4] = "santozzi@flasf.com";
-add_line(ruta, delimitador, encabezado,5);
-  encabezado[0] = "2";
-  encabezado[1] = "carlo";
-  encabezado[2] = "antos";
-  encabezado[3] = "31";
-  encabezado[4] = "sdfsd@flasf.com";
-add_line(ruta, delimitador, encabezado,5);
-  encabezado[0] = "3";
-  encabezado[1] = "mariela";
-  encabezado[2] = "lamba";
-  encabezado[3] = "42";
-  encabezado[4] = "lambad@flasf.com";
-add_line(ruta, delimitador, encabezado,5);
-  encabezado[0] = "2";
-  encabezado[1] = "Carlos";
-  encabezado[2] = "antos";
-  encabezado[3] = "31";
-  encabezado[4] = "carlos@flasf.com";
+  string CBU = "1444806711100094671495";
+  usuario jos = find(ruta,delimitador,CBU);
+ /*
+  cout <<endl;
+  cout << "----------------------------------"<< endl;
+  cout << "CBU: " << jos.CBU<< endl;
+  cout << "Nombre: " << jos.nombre<< endl;
+  cout << "Apellido: " << jos.apellido<< endl;
+  cout << "Pin: " << jos.pin<< endl;
+  cout << "Balance: " << jos.balance<< endl;
+   
+  cout << "----------------------------------"<< endl;
+  cout <<endl;
+  */
+//crear_archivo(ruta,delimitador,encabezado,cant_cols);
+//find_all(ruta,delimitador,cant_cols);
+jos.nombre = "Sergio";
+jos.balance = 123456;
+string us[5];
+us[0] = jos.CBU ;
+us[1] = jos.nombre ;
+us[2] = "Antozzi" ;
+us[3] = jos.pin ;
+us[4] = to_string(369.36)  ;
+//update(ruta,delimitador,CBU,us,5);
+jos.CBU = "123456";
+jos.pin = "1234";
+//add_user(ruta,delimitador,jos);
+remove_line(ruta,delimitador,"123456");
+find_all(ruta,delimitador);
 
 //update_line(ruta,delimitador,"1",encabezado,cant_cols);
+
+
+
+      
+  
 }
